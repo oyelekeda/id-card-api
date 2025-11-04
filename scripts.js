@@ -1,62 +1,13 @@
-// const url = "https://dummyjson.com/users";
-// const fetchData = {
-//   method: "GET",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Accept: "application/json",
-//   },
-// }
+      const url = "https://dummyjson.com/users";
+      const fetchData = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
 
-// let allProducts = document.querySelector("#allProducts");
-
-// fetch(url, fetchData)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//     let products = data.products;
-//     console.log(products);
-
-//     allProducts.innerHTML = products
-//       .map(function (value, index, array) {
-//         let newPrice = ((100 - value.discountPercentage) / 100) * value.price;
-//         return `
-//             <div class="eachProduct">
-//                 <img src="${value.thumbnail}" alt="">
-//                 <span class="discount">-${value.discountPercentage}%</span>
-//                 <p>${value.title}</p>
-//                 <p>
-//                     <span class="oldPrice">$${value.price}</span>
-//                     <span>$${newPrice.toFixed(2)}</span>
-//                 </p>
-//                 <button>Add to Cart</button>
-//             </div>
-//         `;
-//       })
-//       .join("");
-//   })
-//   .catch(function (error) {
-//     alert("Error fetching product");
-//     console.log(error);
-//   });
-
-const url = "https://dummyjson.com/users";
-const fetchData = {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-};
-
-let allUsers = document.querySelector("#allProducts"); 
-
-// fetch(url, fetchData)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     let users = data.users;
+      let allUsers = document.querySelector("#allUsers");
 
 
     fetch(url, fetchData)
@@ -65,25 +16,37 @@ let allUsers = document.querySelector("#allProducts");
       })
       .then(function (data) {
         console.log(data);
-        let users = data.users;
-        console.log(user);
+        let users = data.users; 
+        console.log(users); 
 
-        allUsers.innerHTML = users
-          .map(function (user) {
-            return `
-          <div class="eachUser">
-            <img src="${user.image}" alt="${user.firstName}">
-            <h3>${user.firstName} ${user.lastName}</h3>
-            <p>Email: ${user.email}</p>
-            <p>Phone: ${user.phone}</p>
-            <p>Company: ${user.company.name}</p>
-          </div>
-        `;
+          allUsers.innerHTML = users
+            .map(function (user) { 
+                return `
+              <div class="eachUser fade-in bg-white shadow-lg rounded-2xl p-6 text-center border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="relative">
+                  <img 
+                    src="${user.image}" 
+                    alt="${user.firstName}" 
+                    class="w-24 h-24 mx-auto rounded-full object-cover ring-4 ring-sky-500/40 mb-4"
+                  >
+                  <span class="absolute top-2 right-2 bg-sky-100 text-sky-600 text-xs font-medium px-2 py-1 rounded-full shadow-sm">
+                    ID: ${user.id}
+                  </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800">${user.firstName} ${user.lastName}</h3>
+                <p class="text-sm text-sky-600 font-medium">${user.company.department}</p>
+                <div class="mt-4 text-gray-600 text-sm space-y-1">
+                  <p> <span class="text-gray-700">${user.email}</span></p>
+                  <p> <span class="text-gray-700">${user.phone}</span></p>
+                   <p> <span class="text-gray-700">${user.gender}</span></p>
+                </div>
+                
+              </div>
+            `;
           })
           .join("");
-      })
-      .catch((error) => {
-        alert("Error fetching users");
-        console.log(error);
-      });
-
+        })
+        .catch(error => {
+          alert("Error fetching users");
+          console.error(error);
+        });

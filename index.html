@@ -1,58 +1,25 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ID CARD</title>
-</head>
-<body>
-     <style>
-        #allProducts{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User ID Cards</title>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
 
-        .eachProduct{
-            width: 23%;
-            text-align: center;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
+  <body class="bg-gradient-to-br from-sky-50 via-white to-slate-100 text-gray-900 min-h-screen flex flex-col items-center">
+    <header class="w-full bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto py-5 px-6 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-sky-600 tracking-tight">User ID Cards</h1>
+              </div>
+    </header>
+   
+    <main class="flex-1 w-full max-w-7xl px-6 py-10">
+      <div id="allUsers" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+    </main>
 
-        .eachProduct img{
-            width: 70%;
-            height: 180px;
-        }
 
-        .eachProduct button{
-            background-color: green;
-            color: white;
-            border: none;
-            padding: 10px;
-        }
-
-        .discount{
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: orange;
-            color: white;
-            padding: 10px;
-            display: inline-block;
-        }
-
-        .oldPrice{
-            text-decoration: line-through;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="allProducts"></div>
-    
-    <script src="scripts.js"></script>
-</body>
+  <script src="scripts.js"></script>
+  </body>
 </html>
