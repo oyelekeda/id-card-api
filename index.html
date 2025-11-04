@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID CARD</title>
+</head>
+<body>
+     <style>
+        #allProducts{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .eachProduct{
+            width: 23%;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .eachProduct img{
+            width: 70%;
+            height: 180px;
+        }
+
+        .eachProduct button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+        }
+
+        .discount{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .oldPrice{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="allProducts"></div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
