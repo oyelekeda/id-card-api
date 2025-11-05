@@ -21,15 +21,6 @@
 
           allUsers.innerHTML = users
             .map(function (user) { 
-              let gender;
-              if(user.gender ==="male"){
-                gender= "Male"
-              } else if (user.gender ==="female"){
-                gender = "Female"
-              }else {
-                gender= user.gender;
-              }
-
                 return `
               <div class="eachUser fade-in bg-white shadow-lg rounded-2xl p-6 text-center border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                 <div class="relative">
@@ -42,12 +33,12 @@
                     ID: ${user.id}
                   </span>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-800"><strong>Name</stong>${user.firstName} ${user.lastName}</h3>
-                <p class="text-sm text-sky-600 font-medium"><strong>Department</stong>${user.company.department}</p>
+                <h3 class="text-lg font-semibold text-gray-800">${user.firstName} ${user.lastName}</h3>
+                <p class="text-sm text-sky-600 font-medium">${user.company.department}</p>
                 <div class="mt-4 text-gray-600 text-sm space-y-1">
-                  <p> <span class="text-gray-700"><strong>Email</stong>${user.email}</span></p>
-                  <p> <span class="text-gray-700"><strong>Phone</stong>${user.phone}</span></p>
-                   <p> <span class="text-gray-700"><strong>Gender</stong>${user.gender}</span></p>
+                  <p> <span class="text-gray-700">${user.email}</span></p>
+                  <p> <span class="text-gray-700">${user.phone}</span></p>
+                   <p> <span class="text-gray-700">${user.gender}</span></p>
                 </div>
                 
               </div>
