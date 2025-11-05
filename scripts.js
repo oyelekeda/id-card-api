@@ -21,14 +21,18 @@
 
           allUsers.innerHTML = users
             .map(function (user) { 
-                let gender;
-              if(user.gender ==="male"){
-                gender= "Male"
-              } else if (user.gender ==="female"){
-                gender = "Female"
-              }else {
-                gender= user.gender;
-              }
+              //   let gender;
+              // if(user.gender ==="male"){
+              //   gender= "Male"
+              // } else if (user.gender ==="female"){
+              //   gender = "Female"
+              // }else {
+              //   gender= user.gender;
+              // }
+
+              let gender;
+              user.gender[0].toUppercase() +
+              user.gender.substring(1)
               
                 return `
               <div class="eachUser fade-in bg-white shadow-lg rounded-2xl p-6 text-center border border-gray-100 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
